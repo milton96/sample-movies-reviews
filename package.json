@@ -1,0 +1,21 @@
+{
+  "name": "sample-movies-reviews",
+  "version": "0.0.1",
+  "description": "Pequeña aplicacion sobre reviews de peliculas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "sample-movies-reviews"
+  },
+  "keywords": [
+    "movies",
+    "reviews",
+    "mongodb",
+    "nodejs"
+  ],
+  "author": "milton96",
+  "license": "ISC"
+}
