@@ -1,10 +1,12 @@
 {
   "name": "sample-movies-reviews",
   "version": "0.0.1",
-  "description": "Pequeña aplicacion sobre reviews de peliculas.",
+  "description": "Pequeña aplicación sobre reviews de películas.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +19,12 @@
     "nodejs"
   ],
   "author": "milton96",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4"
+  },
+  "engines": {
+    "node": "12.18.2"
+  }
 }
