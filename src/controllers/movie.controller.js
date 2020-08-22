@@ -1,8 +1,8 @@
 const movieController = {};
 const Movie = require('../models/Movie');
 
-movieController.indexMovies = () => {
-    return Movie.find({ posters: { $exists: true } }).limit(5);
+movieController.indexMovies = async () => {
+    return await Movie.find({ poster: { $exists: true } }).limit(5).lean();
 }
 
 
