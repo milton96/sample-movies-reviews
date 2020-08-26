@@ -1,5 +1,4 @@
 const { Router } = require("express");
-const { Exception } = require("handlebars");
 const router = Router();
 const movie = require("../controllers/movie.controller");
 
