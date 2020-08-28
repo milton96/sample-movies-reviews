@@ -10,6 +10,7 @@ Aplicación de reseñas de peliculas
 * handlebars
 * mongoose
 * morgan
+* serve-favicon
 
 ## Módulos de desarrollo
 * dotenv

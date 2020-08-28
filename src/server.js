@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const handlebars = require('express-handlebars');
+const favicon = require('serve-favicon');
 
 // Inicializaciones
 const app = express();
@@ -27,6 +28,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(require('./routes/index.routes'));
 
 // Archivos estaticos
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/', express.static(path.join(__dirname, 'public')));
+app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')));
 
 module.exports = app;
