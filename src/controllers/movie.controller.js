@@ -9,7 +9,7 @@ movieController.indexMovies = async () => {
 };
 
 movieController.getMovie = async (movieId) => {
-    return await Movie.find({ _id: moongose.Types.ObjectId(movieId) });
+    return await Movie.findById(moongose.Types.ObjectId(movieId)).lean();
 };
 
 module.exports = movieController;
