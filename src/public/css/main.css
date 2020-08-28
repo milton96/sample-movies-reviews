@@ -1,3 +1,18 @@
 body {
     background-color: #37474f;
 }
+
+.index-card-image {
+    height: 400px;
+    overflow: hidden;
+}
+
+@media (max-width: 991px) and (min-width: 601px) {
+    .index-card-image {
+        height: 800px;
+    }
+}
+
+.margin-top {
+    margin-top: 40px !important;
+}

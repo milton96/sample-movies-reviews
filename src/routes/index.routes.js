@@ -3,15 +3,27 @@ const router = Router();
 const movie = require("../controllers/movie.controller");
 
 router.get("/", async (req, res) => {
+  const ITEMS = 3;
   try {
     let movies = await movie.indexMovies();
-    res.render("index", { movies: movies });
+    res.render("index", { movies });
   } catch (error) {
     error.code = 500;
     error.description = "Error al obtener los datos";
     res.render("error", { error });
   }
 });
+
+router.get('/p/:movieId', async (req, res) => {
+  try {
+    let p = await movie.getMovie(req.params.movieId);
+    res.render('movie', { p });
+  } catch (error) {
+    error.code = 500;
+    error.description = "Error al obtener los datos";
+    res.render("error", { error });
+  }
+})
 
 router.get("/testing", (req, res) => {
   const pelis = [
