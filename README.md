@@ -15,3 +15,7 @@ Aplicación de reseñas de peliculas
 ## Módulos de desarrollo
 * dotenv
 * nodemon
+
+## Frameworks CSS
+* Materialize
+* UIkit
