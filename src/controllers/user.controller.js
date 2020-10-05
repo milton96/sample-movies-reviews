@@ -12,7 +12,6 @@ userController.renderRegistrarseForm = (req, res) => {
 };
 
 userController.renderPanel = async (req, res) => {
-    console.log(req.user);
     const user = await Account.findById(req.user._id).lean();
     const options = {
         usuario: user,
@@ -52,7 +51,7 @@ userController.registrarse = async (req, res) => {
 userController.login = passport.authenticate('mongo', {
     failureRedirect: '/login',
     successRedirect: '/panel',
-    failureFlash: true
+    failureFlash: false
 });
 
 userController.logout = (req, res) => {
