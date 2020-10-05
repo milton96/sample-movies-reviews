@@ -1,5 +1,6 @@
 const userController = {};
 const passport = require('passport');
+const Account = require('../models/Account');
 let title = "Usuario";
 
 userController.renderLoginForm = (req, res) => {
@@ -10,10 +11,19 @@ userController.renderRegistrarseForm = (req, res) => {
     res.render('users/registrarse', { title: "Registrarse" });
 };
 
+userController.renderPanel = async (req, res) => {
+    console.log(req.user);
+    const user = await Account.findById(req.user._id).lean();
+    const options = {
+        usuario: user,
+        title: "Panel de control"
+    }
+    res.render('users/panel', options);
+}
+
 userController.registrarse = async (req, res) => {
     title = "Registrarse";
-    let errores = [];
-    let Account = require('../models/Account');
+    let errores = [];    
     const { usuario, correo, password, confirmPassword } = req.body;
 
     if (password != confirmPassword) {

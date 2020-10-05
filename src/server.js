@@ -26,8 +26,6 @@ app.set('view engine', '.hbs');
 // Middlewares
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
-app.use(passport.initialize());
-app.use(passport.session());
 const MongoStore = connectMongo(session);
 app.use(
     session({
@@ -39,6 +37,8 @@ app.use(
         saveUninitialized: true
     })
 );
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Variables globales
 

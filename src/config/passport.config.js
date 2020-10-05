@@ -3,7 +3,7 @@ const localStrategy = require('passport-local').Strategy;
 const Account = require('../models/Account');
 
 passport.use('mongo', new localStrategy({
-    usernameField: 'email',
+    usernameField: 'correo',
     passwordField: 'password'
 }, async (email, password, done) => {
     // Comprobar si el correo existe en la base de datos
@@ -12,7 +12,7 @@ passport.use('mongo', new localStrategy({
         return done(null, false, { message: 'El usuario no existe.' });
     } else {
         // Comprobar contraseñas
-        const match = await user.matchpassword(password);
+        const match = await user.matchPassword(password);
         if (match) {
             return done(null, user);
         } else {
@@ -26,7 +26,7 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-    User.findById(id, (err, user) => {
+    Account.findById(id, (err, user) => {
         done(err, user);
     });
 });
