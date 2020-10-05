@@ -1,0 +1,39 @@
+<div>
+    <div class="">
+        <div class="">
+            <div class="">
+                <form action="/registrarse" method="POST">
+                    <div class="">
+                        <div class="input-field">
+                            <input id="usuario" name="usuario"type="text" class="validate" value="{{usuario}}">
+                            <label for="usuario">Usuario</label>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="input-field">
+                            <input id="correo" name="correo" type="email" class="validate" value="{{correo}}">
+                            <label for="correo">Correo</label>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="input-field">
+                            <input id="password" name="password" type="password" class="validate">
+                            <label for="password">Contraseña</label>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="input-field">
+                            <input id="confirmPassword" name="confirmPassword" type="password" class="validate">
+                            <label for="confirmPassword">Confirmar contraseña</label>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn">Registrarse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{errores}}

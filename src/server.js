@@ -3,9 +3,14 @@ const path = require('path');
 const morgan = require('morgan');
 const handlebars = require('express-handlebars');
 const favicon = require('serve-favicon');
+const passport = require('passport');
+const connectMongo = require('connect-mongo');
+const mongoose = require('mongoose');
+const session = require('express-session');
 
 // Inicializaciones
 const app = express();
+require('./config/passport.config');
 
 // Configuraciones
 app.set('port', process.env.PORT || 3000);
@@ -21,11 +26,25 @@ app.set('view engine', '.hbs');
 // Middlewares
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
+app.use(passport.initialize());
+app.use(passport.session());
+const MongoStore = connectMongo(session);
+app.use(
+    session({
+        store: new MongoStore({
+            mongooseConnection: mongoose.connection
+        }),
+        secret: "123456asdfghjbvnmiy87",
+        resave: true,
+        saveUninitialized: true
+    })
+);
 
 // Variables globales
 
 // Rutas
 app.use(require('./routes/index.routes'));
+app.use(require('./routes/user.routes'));
 
 // Archivos estaticos
 app.use(express.static(path.join(__dirname, '/public')));
