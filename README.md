@@ -3,6 +3,7 @@
 Aplicación de reseñas de peliculas
 
 ## Módulos
+* bcryptjs
 * connect-mongo
 * express
 * express-handlebars
@@ -10,6 +11,8 @@ Aplicación de reseñas de peliculas
 * handlebars
 * mongoose
 * morgan
+* passport
+* passport-local
 * serve-favicon
 
 ## Módulos de desarrollo
