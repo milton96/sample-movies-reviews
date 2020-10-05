@@ -15,7 +15,8 @@ userController.renderPanel = async (req, res) => {
     const user = await Account.findById(req.user._id).lean();
     const options = {
         usuario: user,
-        title: "Panel de control"
+        title: "Panel de control",
+        layout: "panel"
     }
     res.render('users/panel', options);
 }

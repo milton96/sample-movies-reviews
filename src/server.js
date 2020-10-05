@@ -32,7 +32,7 @@ app.use(
         store: new MongoStore({
             mongooseConnection: mongoose.connection
         }),
-        secret: "123456asdfghjbvnmiy87",
+        secret: "secret",
         resave: true,
         saveUninitialized: true
     })

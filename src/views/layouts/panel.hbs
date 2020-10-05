@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/uikit.css">
+    <link rel="stylesheet" href="/css/materialize.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <header>
+        {{>navbarpanel}}
+        <ul id="slide-out" class="sidenav sidenav-fixed sidebar-container">
+            <li class="indigo sidebar-header"><span>Panel</span></li>
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header">Spotify<i class="material-icons right">arrow_drop_down</i></a>
+                        <div class="collapsible-body sidebar-dropdown">
+                            <ul>
+                                <li><a href="#!">First</a></li>
+                                <li><a href="#!">Second</a></li>
+                                <li><a href="#!">Third</a></li>
+                                <li><a href="#!">Fourth</a></li>
+                                <li><a href="/logout">Cerrar sesión</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="collapsible-header">Cuenta<i class="material-icons right">arrow_drop_down</i></a>
+                        <div class="collapsible-body sidebar-dropdown">
+                            <ul>
+                                <li><a href="#!">First</a></li>
+                                <li><a href="#!">Second</a></li>
+                                <li><a href="#!">Third</a></li>
+                                <li><a href="#!">Fourth</a></li>
+                                <li><a href="/logout">Cerrar sesión</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="collapsible-header">Configuración<i class="material-icons right">arrow_drop_down</i></a>
+                        <div class="collapsible-body sidebar-dropdown">
+                            <ul>
+                                <li><a href="#!">First</a></li>
+                                <li><a href="#!">Second</a></li>
+                                <li><a href="#!">Third</a></li>
+                                <li><a href="#!">Fourth</a></li>
+                                <li><a href="/logout">Cerrar sesión</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+    <main>
+        <div class="container">
+            {{{body}}}
+        </div>
+    </main>
+
+    <script src="/js/uikit.js"></script>
+    <script src="/js/materialize.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/panel.js"></script>
+</body>
+
+</html>
