@@ -7,6 +7,7 @@ const passport = require('passport');
 const connectMongo = require('connect-mongo');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
 // Inicializaciones
 const app = express();
@@ -39,6 +40,7 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(cookieParser());
 
 // Variables globales
 app.use((req, res, next) => {
@@ -50,6 +52,7 @@ app.use((req, res, next) => {
 // Rutas
 app.use(require('./routes/index.routes'));
 app.use(require('./routes/user.routes'));
+app.use('/spotify', require('./routes/spotify.routes'));
 
 // Archivos estaticos
 app.use(express.static(path.join(__dirname, '/public')));
