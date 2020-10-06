@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const router = Router();
-const { login, callback, basePage, search, addQueue } = require('../controllers/spotify.controller');
+const { login, callback, basePage, search, addQueue2 } = require('../controllers/spotify.controller');
 const { isAuthenticated } = require('../helpers/auth');
 
 router.get('/', isAuthenticated, (req, res) => {
@@ -15,6 +15,6 @@ router.get('/callback', isAuthenticated, callback);
 
 router.get('/search', isAuthenticated, search);
 
-router.get('/add', isAuthenticated, addQueue);
+router.get('/add', isAuthenticated, addQueue2);
 
 module.exports = router;

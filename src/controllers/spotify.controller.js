@@ -1,5 +1,5 @@
 const SpotifyWebApi = require('spotify-web-api-node');
-const axios = require('axios');
+const axios = require('axios').default;
 const querystring = require('querystring');
 const spotifyController = {};
 
@@ -116,6 +116,28 @@ spotifyController.addQueue = (req, res) => {
         console.log("ok", response);
     }).catch(function (error){
         console.log(error);
+    });
+    res.redirect("/spotify/configuracion");
+}
+
+spotifyController.addQueue2 = (req, res) => {
+    const token = spotifyApi.getAccessToken();
+    let data = {
+        uri: 'spotify:track:5STfIC4lCW6Q3jYbr6L77n',
+        devide_id: ''
+    }
+    let configAxios = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        }        
+    };
+    axios.post(`https://api.spotify.com/v1/me/player/queue?${querystring.stringify(data)}`, null, configAxios)
+    .then(function (data) {
+        console.log(data);
+    }).catch(function (error) {
+        console.log("error", error);
     });
     res.redirect("/spotify/configuracion");
 }
